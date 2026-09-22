@@ -22,13 +22,18 @@ export function HomePage() {
               </ImageLightbox>
             </div>
           </PlaceholderPanel>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid border-y border-brass/70 bg-vellum/40 sm:grid-cols-2 lg:grid-cols-4">
             {t.highlights.map((item) => (
-              <div key={item} className="rounded-md border border-border bg-vellum px-4 py-3 text-center font-nav text-xl text-primary shadow-parchment">
-                {item}
-              </div>
+              <li
+                key={item}
+                className="border-b border-border/70 px-4 py-5 text-center last:border-b-0 sm:border-r sm:even:border-r-0 lg:border-b-0 lg:even:border-r lg:last:border-r-0"
+              >
+                <span className="font-display text-2xl text-primary sm:text-3xl">
+                  {item}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
         <aside className="border-l-4 border-brass bg-vellum p-6 shadow-parchment">
