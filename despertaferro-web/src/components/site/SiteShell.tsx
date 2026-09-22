@@ -26,7 +26,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </div>
             </div>
 
-            <Link to="/" className="group flex shrink-0 flex-col items-center gap-3 text-center">
+            <div className="group flex shrink-0 flex-col items-center gap-3 text-center">
               <MedievalLogo />
               <div className="relative flex w-full min-w-72 items-center justify-center bg-iron px-5 py-3 text-iron-foreground shadow-medieval sm:min-w-96">
                 <span className="absolute left-0 h-full w-7 -translate-x-full bg-iron banner-tail-left" />
@@ -35,7 +35,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <span className="mx-3 h-8 w-px bg-brass" />
                 <span className="font-display text-4xl leading-none sm:text-5xl lg:text-6xl">{t.brand.nameB}</span>
               </div>
-            </Link>
+            </div>
 
             <div className="hidden flex-1 sm:block">
               <div className="flex min-h-[8rem] items-center justify-center text-center">

@@ -14,6 +14,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { PlaceholderPanel } from "@/components/site/PlaceholderPanel";
+import { ImageLightbox } from "@/components/site/ImageLightbox";
 import { content, type PageKey } from "@/lib/site-content";
 import { useLanguage } from "@/lib/language";
 
@@ -126,12 +127,18 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
         {data.albums.map((album, index) => (
           <PlaceholderPanel key={album} label={album}>
             <div className="flex h-52 w-full items-center justify-center overflow-hidden rounded-md border border-border bg-background/50">
-              <img
+              <ImageLightbox
                 src={galleryImages[index] ?? galleryImages[0]}
                 alt={album}
-                className="h-full w-full object-cover"
-                style={{ objectPosition: index === 1 ? "48% 20%" : "center" }}
-              />
+                className="h-full w-full rounded-none"
+              >
+                <img
+                  src={galleryImages[index] ?? galleryImages[0]}
+                  alt={album}
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: index === 1 ? "48% 20%" : "center" }}
+                />
+              </ImageLightbox>
               <span className="sr-only">{index + 1}</span>
             </div>
           </PlaceholderPanel>
@@ -209,7 +216,9 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
             <article key={product.title} className="overflow-hidden rounded-md border border-border bg-vellum shadow-parchment">
               {product.image ? (
                 <div className="h-72 w-full overflow-hidden border-b border-border bg-white">
-                  <img src={product.image} alt={product.title} className="h-full w-full object-contain" />
+                  <ImageLightbox src={product.image} alt={product.title} className="h-full w-full rounded-none">
+                    <img src={product.image} alt={product.title} className="h-full w-full object-contain" />
+                  </ImageLightbox>
                 </div>
               ) : (
                 <div className="flex h-72 w-full items-center justify-center border-b border-border bg-background/60 px-6 text-center font-nav text-3xl text-accent">
@@ -219,6 +228,7 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
               <div className="p-5">
                 <h2 className="font-nav text-3xl text-foreground">{product.title}</h2>
                 {product.description ? <p className="mt-3 text-muted-foreground">{product.description}</p> : null}
+                {product.price ? <p className="mt-4 font-nav text-2xl text-accent">{product.price}</p> : null}
               </div>
             </article>
           ))}
@@ -298,11 +308,13 @@ function InfoArticle({ article }: { article: InfoArticle }) {
           <div className="lg:col-start-2 lg:row-start-1">
             {article.title.toLowerCase().includes("indument") || article.title.toLowerCase().includes("clothing") ? (
               <div className="overflow-hidden rounded-md border border-border bg-iron shadow-parchment">
-                <img
-                  src="/fotoIndumentaria_info.jpg"
-                  alt={article.imageLabel}
-                  className="h-60 w-full object-cover sm:h-72 lg:h-80"
-                />
+                <ImageLightbox src="/fotoIndumentaria_info.jpg" alt={article.imageLabel} className="w-full rounded-none">
+                  <img
+                    src="/fotoIndumentaria_info.jpg"
+                    alt={article.imageLabel}
+                    className="h-60 w-full object-cover sm:h-72 lg:h-80"
+                  />
+                </ImageLightbox>
               </div>
             ) : (
               <div className="aspect-[4/3] rounded-md border border-border bg-battle-scene" role="img" aria-label={article.imageLabel} />
@@ -340,11 +352,13 @@ function InfoArticle({ article }: { article: InfoArticle }) {
             return (
               <div key={label} className="space-y-3">
                 <div className={`flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md border border-border shadow-parchment ${index === 1 ? "bg-white" : "bg-iron"}`}>
-                  <img
-                    src={images[index] ?? images[0]}
-                    alt={label}
-                    className={index < 2 ? "h-full w-full object-contain p-3" : "h-full w-full object-cover"}
-                  />
+                  <ImageLightbox src={images[index] ?? images[0]} alt={label} className="h-full w-full rounded-none">
+                    <img
+                      src={images[index] ?? images[0]}
+                      alt={label}
+                      className={index < 2 ? "h-full w-full object-contain p-3" : "h-full w-full object-cover"}
+                    />
+                  </ImageLightbox>
                 </div>
                 <p className="font-nav text-xl text-accent">{label}</p>
               </div>

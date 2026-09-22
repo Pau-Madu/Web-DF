@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PlaceholderPanel } from "@/components/site/PlaceholderPanel";
 import { content } from "@/lib/site-content";
 import { useLanguage } from "@/lib/language";
+import { ImageLightbox } from "./ImageLightbox";
 
 export function HomePage() {
   const { language } = useLanguage();
@@ -16,11 +17,9 @@ export function HomePage() {
         <div className="space-y-6">
           <PlaceholderPanel label={t.heroCaption}>
             <div className="relative h-52 w-full max-w-3xl overflow-hidden rounded-md border border-border bg-iron text-iron-foreground shadow-medieval">
-              <img
-                src="/Img_Inicio.jpeg"
-                alt={t.heroAlt}
-                className="h-full w-full object-cover object-center [object-position:center_20%]"
-              />
+              <ImageLightbox src="/Img_Inicio.jpeg" alt={t.heroAlt} className="h-full w-full rounded-none">
+                <img src="/Img_Inicio.jpeg" alt={t.heroAlt} className="h-full w-full object-cover object-center [object-position:center_20%]" />
+              </ImageLightbox>
             </div>
           </PlaceholderPanel>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
