@@ -67,7 +67,7 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
 
   if (page === "components") {
     const data = pageContent as (typeof content)[keyof typeof content]["pages"]["components"];
-    const [activeMembers, newMembers] = data.sections;
+    const [activeMembers, aspirantSection, substituteSection] = data.sections;
     return (
       <div className="grid gap-8">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -75,19 +75,12 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
             <InstrumentCard key={item} title={item} index={index} />
           ))}
         </div>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(16rem,1fr)] lg:items-start">
-          <section className="rounded-md border border-brass bg-vellum p-6 shadow-parchment sm:p-8">
-            <div className="mb-6">
-              <h2 className="font-display text-4xl leading-tight text-foreground sm:text-5xl">{activeMembers.title}</h2>
-              <p className="mt-3 text-lg leading-8 text-muted-foreground">{activeMembers.text}</p>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-              {data.members.map((member) => (
-                <MemberCard key={member} name={member} />
-              ))}
-            </div>
-          </section>
-          <TextPanel title={newMembers.title} text={newMembers.text} />
+        <div className="grid gap-8">
+          <MemberGroup title={activeMembers.title} text={activeMembers.text} members={data.members} />
+          <div className="grid gap-8 lg:grid-cols-2">
+            <MemberGroup title={aspirantSection.title} text={aspirantSection.text} members={data.aspirants} />
+            <MemberGroup title={substituteSection.title} text={substituteSection.text} members={data.substitutes} />
+          </div>
         </div>
       </div>
     );
@@ -395,15 +388,59 @@ function InstrumentIcon({ index }: { index: number }) {
 }
 
 function MemberCard({ name }: { name: string }) {
+  const image = memberImages[name];
+
   return (
     <article className="overflow-hidden rounded-md border border-border bg-background/60 shadow-parchment">
-      <div className="flex aspect-[4/3] items-center justify-center border-b border-border bg-battle-scene" role="img" aria-label={`Foto de ${name}`}>
-        <Users className="h-12 w-12 text-brass/80" aria-hidden="true" />
-      </div>
+      {image ? (
+        <ImageLightbox src={image} alt={`Foto de ${name}`} className="aspect-[4/3] w-full border-b border-border">
+          <img
+            src={image}
+            alt={`Foto de ${name}`}
+            className="h-full w-full object-cover"
+            style={{ objectPosition: name === "Pablo" ? "center 32%" : name === "Aitana" ? "center 34%" : name === "Victor" ? "center 34%" : name === "Ruben" ? "center 46%" : name === "Pau" ? "center 40%" : name === "David" ? "center 40%" : "center" }}
+          />
+        </ImageLightbox>
+      ) : (
+        <div className="flex aspect-[4/3] items-center justify-center border-b border-border bg-battle-scene" role="img" aria-label={`Foto de ${name}`}>
+          <Users className="h-12 w-12 text-brass/80" aria-hidden="true" />
+        </div>
+      )}
       <h3 className="px-4 py-4 text-center font-nav text-2xl text-primary">{name}</h3>
     </article>
   );
 }
+
+function MemberGroup({ title, text, members }: { title: string; text: string; members: readonly string[] }) {
+  return (
+    <section className="rounded-md border border-brass bg-vellum p-6 shadow-parchment sm:p-8">
+      <div className="mb-6">
+        <h2 className="font-display text-4xl leading-tight text-foreground sm:text-5xl">{title}</h2>
+        <p className="mt-3 text-lg leading-8 text-muted-foreground">{text}</p>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        {members.map((member) => (
+          <MemberCard key={member} name={member} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const memberImages: Record<string, string> = {
+  Fernando: "/Fotos-componentes/Fer-DF.jpg",
+  "Jose V.": "/Fotos-componentes/Jose%20V.-DF.jpeg",
+  Pablo: "/Fotos-componentes/Pablo-DF.jpeg",
+  "Jose M.": "/Fotos-componentes/Jose%20M.-DF.jpg",
+  Pau: "/Fotos-componentes/Pau-DF.jpeg",
+  David: "/Fotos-componentes/David-DF.jpg",
+  Liam: "/Fotos-componentes/Liam-DF.jpeg",
+  Mariete: "/Fotos-componentes/Mariete-DF.jpg",
+  Miguel: "/Fotos-componentes/Miguel-DF.jpg",
+  Aitana: "/Fotos-componentes/Aitana-DF.jpeg",
+  Victor: "/Fotos-componentes/Victor-DF.jpg",
+  Ruben: "/Fotos-componentes/Ruben-DF.jpeg",
+};
 
 function SideList({ title, items }: { title: string; items: readonly string[] }) {
   return (

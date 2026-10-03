@@ -179,9 +179,12 @@ export const content = {
         groups: ["Bombos de guerra", "Tambors de mà", "Estandarts i Banderes", "Comisió"],
         sections: [
           { title: "Components actius", text: "Espai per afegir noms, fotografies i funcions dins de la banda." },
-          { title: "Nous membres", text: "Informació per a qui vulga unir-se, provar un instrument i començar a assajar." },
+          { title: "Aspirants", text: "Components en procés d'incorporar-se a la secció." },
+          { title: "Suplents", text: "Components de reserva de la banda." },
         ],
-        members: ["Sergio", "Fernando", "Jose", "Pablo", "Jose M.", "Gerard", "Pau", "David", "Liam", "Mario", "Alex", "Adán"],
+        members: ["Sergio", "Fernando", "Jose V.", "Pablo", "Jose M.", "Gerard", "Pau", "David", "Liam", "Mariete", "Javi", "Miguel"],
+        aspirants: ["Aitana", "Ivan", "Victor"],
+        substitutes: ["Ruben", "Alex", "Adán"],
       },
       actuacions: {
         eyebrow: "Calendari",
@@ -373,9 +376,12 @@ export const content = {
         groups: ["Bombos de guerra", "Tambores de mano", "Estandartes y banderas", "Comisión"],
         sections: [
           { title: "Componentes activos", text: "Espacio para añadir nombres, fotografías y funciones dentro de la banda." },
-          { title: "Nuevos miembros", text: "Información para quien quiera unirse, probar un instrumento y empezar a ensayar." },
+          { title: "Aspirantes", text: "Componentes en proceso de incorporarse a la sección." },
+          { title: "Suplentes", text: "Componentes de reserva de la banda." },
         ],
-        members: ["Sergio", "Fernando", "Jose", "Pablo", "Jose M.", "Gerard", "Pau", "David", "Liam", "Mario", "Alex", "Adán"],
+        members: ["Sergio", "Fernando", "Jose V.", "Pablo", "Jose M.", "Gerard", "Pau", "David", "Liam", "Mariete", "Javi", "Miguel"],
+        aspirants: ["Aitana", "Ivan", "Victor"],
+        substitutes: ["Ruben", "Alex", "Adán"],
       },
       actuacions: {
         eyebrow: "Calendario",
@@ -567,9 +573,12 @@ export const content = {
         groups: ["War bass drums", "Hand drums", "Standards and banners", "Committee"],
         sections: [
           { title: "Active members", text: "Space to add names, photographs and roles within the band." },
-          { title: "New members", text: "Information for anyone who wants to join, try an instrument and start rehearsing." },
+          { title: "Applicants", text: "Members in the process of joining the section." },
+          { title: "Substitutes", text: "Reserve members of the band." },
         ],
-        members: ["Sergio", "Fernando", "Jose", "Pablo", "Jose M.", "Gerard", "Pau", "David", "Liam", "Mario", "Alex", "Adán"],
+        members: ["Sergio", "Fernando", "Jose V.", "Pablo", "Jose M.", "Gerard", "Pau", "David", "Liam", "Mariete", "Javi", "Miguel"],
+        aspirants: ["Aitana", "Ivan", "Victor"],
+        substitutes: ["Ruben", "Alex", "Adán"],
       },
       actuacions: {
         eyebrow: "Calendar",

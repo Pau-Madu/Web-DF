@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 export function MedievalLogo() {
   return (
-    <div className="relative flex aspect-square w-32 items-center justify-center overflow-hidden rounded-full border-8 border-iron bg-iron text-iron-foreground shadow-medieval sm:w-44 lg:w-56">
+    <div className="relative flex aspect-square w-24 items-center justify-center overflow-hidden rounded-full border-8 border-iron bg-iron text-iron-foreground shadow-medieval sm:w-32 lg:w-56">
       <Link
         to="/"
         className="group relative block h-full w-full cursor-pointer overflow-hidden rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"

@@ -15,9 +15,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background bg-parchment-texture text-foreground">
       <header className="border-b border-brass bg-background/80 shadow-parchment backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
-            <div className="hidden flex-1 sm:block">
+        <div className="relative mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 sm:py-6 lg:gap-6 lg:px-8">
+          <div className="flex flex-col items-center gap-3 lg:flex-row lg:justify-between lg:gap-4">
+            <div className="hidden flex-1 lg:block">
               <div className="flex min-h-[8rem] items-center justify-center text-center">
                 <div className="flex flex-col items-center gap-3">
                   <p className="font-display text-2xl text-accent lg:text-3xl">{t.brand.kickerLeft}</p>
@@ -26,18 +26,18 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </div>
             </div>
 
-            <div className="group flex shrink-0 flex-col items-center gap-3 text-center">
+            <div className="group flex w-full min-w-0 flex-col items-center gap-2 text-center sm:gap-3 lg:w-auto lg:shrink-0">
               <MedievalLogo />
-              <div className="relative flex w-full min-w-72 items-center justify-center bg-iron px-5 py-3 text-iron-foreground shadow-medieval sm:min-w-96">
+              <div className="relative flex w-full max-w-[calc(100%_-_3.5rem)] min-w-0 flex-col items-center justify-center bg-iron px-4 py-2 text-iron-foreground shadow-medieval sm:max-w-sm lg:min-w-96 lg:flex-row lg:px-5 lg:py-3">
                 <span className="absolute left-0 h-full w-7 -translate-x-full bg-iron banner-tail-left" />
                 <span className="absolute right-0 h-full w-7 translate-x-full bg-iron banner-tail-right" />
-                <span className="font-display text-4xl leading-none sm:text-5xl lg:text-6xl">{t.brand.nameA}</span>
-                <span className="mx-3 h-8 w-px bg-brass" />
-                <span className="font-display text-4xl leading-none sm:text-5xl lg:text-6xl">{t.brand.nameB}</span>
+                <span className="font-display text-3xl leading-none sm:text-4xl lg:text-6xl">{t.brand.nameA}</span>
+                <span className="my-1 h-px w-8 bg-brass lg:mx-3 lg:my-0 lg:h-8 lg:w-px" />
+                <span className="font-display text-3xl leading-none sm:text-4xl lg:text-6xl">{t.brand.nameB}</span>
               </div>
             </div>
 
-            <div className="hidden flex-1 sm:block">
+            <div className="hidden flex-1 lg:block">
               <div className="flex min-h-[8rem] items-center justify-center text-center">
                 <div className="flex flex-col items-center gap-3">
                   <p className="font-display text-2xl text-accent lg:text-3xl">{t.brand.kickerRight}</p>
@@ -46,7 +46,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </div>
             </div>
 
-            <div className="absolute right-4 top-4 flex items-center gap-2 lg:right-8">
+            <div className="absolute right-4 top-4 z-10 flex items-center gap-2 lg:right-8">
               <div className="hidden items-center gap-1 rounded-md border border-border bg-vellum p-1 sm:flex" aria-label={t.brand.language}>
                 <Languages className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 {languages.map((item) => (
@@ -73,6 +73,17 @@ export function SiteShell({ children }: { children: ReactNode }) {
               >
                 {open ? <X /> : <Menu />}
               </Button>
+            </div>
+          </div>
+
+          <div className="grid gap-2 text-center lg:hidden">
+            <div>
+              <p className="font-display text-sm leading-snug text-accent">{t.brand.kickerLeft}</p>
+              <p className="mt-0.5 text-xs text-primary">{t.brand.since}</p>
+            </div>
+            <div>
+              <p className="font-display text-sm leading-snug text-accent">{t.brand.kickerRight}</p>
+              <p className="mt-0.5 text-xs text-primary">{t.brand.place}</p>
             </div>
           </div>
 
