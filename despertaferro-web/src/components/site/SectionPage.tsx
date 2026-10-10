@@ -398,7 +398,26 @@ function MemberCard({ name }: { name: string }) {
             src={image}
             alt={`Foto de ${name}`}
             className="h-full w-full object-cover"
-            style={{ objectPosition: name === "Pablo" ? "center 32%" : name === "Aitana" ? "center 34%" : name === "Victor" ? "center 34%" : name === "Ruben" ? "center 46%" : name === "Pau" ? "center 40%" : name === "David" ? "center 40%" : "center" }}
+            style={{
+              objectPosition:
+                name === "Pablo"
+                  ? "center 32%"
+                  : name === "Aitana"
+                    ? "center 34%"
+                    : name === "Victor"
+                      ? "center 34%"
+                      : name === "Ruben"
+                        ? "center 46%"
+                        : name === "Gerard"
+                          ? "center 45%"
+                        : name === "Sergio"
+                          ? "center 65%"
+                          : name === "Pau"
+                            ? "center 40%"
+                            : name === "David"
+                              ? "center 40%"
+                              : "center",
+            }}
           />
         </ImageLightbox>
       ) : (
@@ -428,10 +447,12 @@ function MemberGroup({ title, text, members }: { title: string; text: string; me
 }
 
 const memberImages: Record<string, string> = {
+  Sergio: "/Fotos-componentes/Serfio-DF.jpeg",
   Fernando: "/Fotos-componentes/Fer-DF.jpg",
   "Jose V.": "/Fotos-componentes/Jose%20V.-DF.jpeg",
   Pablo: "/Fotos-componentes/Pablo-DF.jpeg",
   "Jose M.": "/Fotos-componentes/Jose%20M.-DF.jpg",
+  Gerard: "/Fotos-componentes/Gerard-DF.jpeg",
   Pau: "/Fotos-componentes/Pau-DF.jpeg",
   David: "/Fotos-componentes/David-DF.jpg",
   Liam: "/Fotos-componentes/Liam-DF.jpeg",
