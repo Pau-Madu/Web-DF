@@ -1,23 +1,20 @@
 # Integración de la Escoleta
 
-La ruta `/escola` conserva la cabecera, navegación, vídeos y diseño del sitio oficial. Incluye horarios, cuotas pendientes de definir, condiciones y formulario propio.
+La ruta `/escola` conserva la cabecera, navegación, vídeos y diseño del sitio oficial. Incluye horarios, cuotas pendientes de definir, condiciones y el formulario oficial de inscripción.
 
 ## Archivos de la integración
 - `despertaferro-web/src/components/site/EscoletaOverview.tsx`: presentación, horarios y funcionamiento en los tres idiomas existentes.
-- `despertaferro-web/src/components/site/EscoletaRegistration.tsx` y `.css`: formulario en castellano con los estilos del sitio.
-- `despertaferro-web/src/lib/escoleta.ts`: selección de datos y vínculo tutor-menor.
-- `despertaferro-web/src/lib/escoleta-fields.ts`: campos de inscripción.
-- `despertaferro-web/src/lib/escoleta-api.ts`: conexión mediante clave publicable (no es una clave secreta).
-- `SectionPage.tsx`: integración dentro de la sección existente. Se han corregido también tipos opcionales ya presentes para que pase TypeScript.
+- `despertaferro-web/src/components/site/EscoletaRegistration.tsx` y `.css`: tarjeta desplegable con el formulario oficial de Google Forms incrustado y enlace alternativo para abrirlo directamente.
+- `SectionPage.tsx`: integración dentro de la sección existente.
 - `site-content.ts`: nombre Escoleta en el título de la página.
 
-## Base de datos
-Supabase: `wxnpqwbbsocosgvlrnxw`. Las solicitudes se guardan en `public.escoleta_solicitudes` mediante la función `enviar_inscripcion_escoleta`. El script `despertaferro-web/supabase/escoleta.sql` permite reproducir el esquema en una base vacía. Ya se aplicó al proyecto indicado; no debe ejecutarse de nuevo allí. La API pública no puede leer solicitudes ni escribir directamente en la tabla.
+## Envío de solicitudes
+El formulario oficial de Google Forms recibe y almacena las solicitudes. Su carga y funcionamiento están aislados del JavaScript de la web para que un problema del formulario no bloquee la navegación del sitio. El formulario ofrece un enlace directo como alternativa si el navegador no muestra el iframe.
 
-El formulario registra por separado tutor legal, acompañamiento y matrícula del adulto. Los menores quedan vinculados al tutor principal. Los datos de opciones que se desactivan se excluyen del envío. No hay cuentas ni panel de administración real todavía.
+La antigua integración directa con Supabase ya no forma parte de la web: se han retirado sus módulos de cliente, mapeo de campos y pruebas. Se conserva `despertaferro-web/supabase/escoleta.sql` como referencia del esquema que ya se aplicó en el proyecto; no es necesario para mostrar ni enviar el formulario actual de Google.
 
 ## Compilar
-Desde `despertaferro-web`: `npm ci` y `npm run build`. Para comprobar tipos: `npx tsc --noEmit`. Para las pruebas de datos, con Node.js 24: `node --experimental-strip-types --test tests/escoleta.test.mjs`.
+Desde `despertaferro-web`: `npm ci` y `npm run build`. Para comprobar tipos: `npx tsc --noEmit`.
 
 ## Publicar en Firebase
 Desde la carpeta que contiene `firebase.json`:
@@ -28,4 +25,4 @@ npx firebase-tools deploy --only hosting --project despertaferro-cs
 La configuración original publica `despertaferro-web/dist`. La carpeta `dist` se genera con la compilación; no se añade al repositorio. La publicación necesita una cuenta con acceso al proyecto Firebase.
 
 ## Validación
-Se han comprobado compilación, TypeScript y selección de datos para adulto independiente, tutor no alumno, tutor alumno con varios menores y segundo contacto. La comprobación visual local verifica la integración con la cabecera y navegación originales. El formulario usa el mismo servidor validado del prototipo; no se han enviado solicitudes reales durante estas pruebas.
+La ruta `/escola` mantiene el formulario oficial integrado con la cabecera y navegación originales. No se han enviado solicitudes reales durante estas pruebas.
