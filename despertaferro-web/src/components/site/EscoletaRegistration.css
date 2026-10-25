@@ -1,3 +1,61 @@
+.escoleta-overview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.escoleta-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  font-family: "IM Fell English SC", serif;
+  font-size: 18px;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.escoleta-button-primary {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  box-shadow: 0 3px 8px rgb(42 32 18 / 14%);
+}
+
+.escoleta-button-secondary {
+  background: var(--background);
+  color: var(--primary);
+}
+
+.escoleta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgb(42 32 18 / 16%);
+}
+
+.escoleta-button-primary:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.escoleta-button-secondary:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.escoleta-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .escoleta-registration-card {
   overflow: hidden;
   border: 1px solid var(--brass);
@@ -95,6 +153,15 @@
 }
 
 @media (max-width: 640px) {
+  .escoleta-overview-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .escoleta-overview-actions .escoleta-button {
+    width: 100%;
+  }
+
   .escoleta-registration-summary {
     min-height: 0;
     align-items: flex-start;
@@ -122,7 +189,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .escoleta-button,
   .escoleta-registration-chevron {
     transition: none;
+  }
+
+  .escoleta-button:hover {
+    transform: none;
   }
 }

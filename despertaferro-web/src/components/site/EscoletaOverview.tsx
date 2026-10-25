@@ -106,26 +106,32 @@ export function EscoletaOverview() {
   const t = copy[language];
   return (
     <div className="space-y-10">
-      <div className="grid gap-6 md:grid-cols-[1fr_18rem]">
+      <div className="grid gap-6 md:grid-cols-[1fr_25rem]">
         <div>
           <h2 className="font-display text-4xl">{t.title}</h2>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a className="escoleta-button" href="#inscripcion-escoleta">
+          <nav className="escoleta-overview-actions" aria-label={t.title}>
+            <a
+              className="escoleta-button escoleta-button-primary"
+              href="#inscripcion-escoleta"
+            >
               {t.register}
             </a>
-            <a className="escoleta-button secondary" href="#horarios-escoleta">
+            <a
+              className="escoleta-button escoleta-button-secondary"
+              href="#horarios-escoleta"
+            >
               {t.times}
             </a>
             <a
-              className="escoleta-button secondary"
+              className="escoleta-button escoleta-button-secondary"
               href="#funcionamiento-escoleta"
             >
               {t.how}
             </a>
-          </div>
+          </nav>
           <p className="mt-4 text-muted-foreground">{t.start}</p>
         </div>
-        <div className="rounded-md border border-brass bg-vellum p-6">
+        <div className="rounded-md border border-brass bg-vellum p-7">
           <h3 className="font-nav text-2xl">{t.tuition}</h3>
           <p className="mt-3">{t.pending}</p>
           <p className="mt-3 text-muted-foreground">{t.join}</p>
