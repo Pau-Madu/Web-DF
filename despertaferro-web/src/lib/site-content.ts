@@ -50,7 +50,7 @@ export const routeMeta: Record<PageKey, { title: string; description: string }> 
     description: "Galeria d'imatges de desfilades, assajos i actes medievals de la banda.",
   },
   escola: {
-    title: "Escola DF! — Desperta, Ferro!",
+    title: "Escoleta — Desperta, Ferro!",
     description: "Escola de percussió medieval per aprendre ritmes de tambor i bombo.",
   },
   merchandising: {
@@ -210,7 +210,7 @@ export const content = {
       },
       escola: {
         eyebrow: "Formació",
-        title: "Escola DF!",
+        title: "Escoleta",
         lead: "Escola de percussió per a xiquets, joves i adults que vulguen aprendre el llenguatge del tambor medieval. I a més aprendre els nostres ritmes.",
         sections: [
           { title: "Aprenentatge", text: "Classes pràctiques de ritme, postura, coordinació i treball en grup. No es requereix haver tocat cap instrument prèviament." },
@@ -407,7 +407,7 @@ export const content = {
       },
       escola: {
         eyebrow: "Formación",
-        title: "Escuela DF!",
+        title: "Escoleta",
         lead: "Escuela de percusión para niños, jóvenes y adultos que quieran aprender el lenguaje del tambor medieval. Además, aprender nuestros ritmos.",
         sections: [
           { title: "Aprendizaje", text: "Clases prácticas de ritmo, postura, coordinación y trabajo en grupo. No se requiere haber tocado ningún instrumento previamente." },
@@ -604,7 +604,7 @@ export const content = {
       },
       escola: {
         eyebrow: "Training",
-        title: "School DF!",
+        title: "Escoleta",
         lead: "Percussion school for children, young people and adults who want to learn the language of medieval drums and, in addition, our rhythms.",
         sections: [
           { title: "Learning", text: "Practical classes in rhythm, posture, coordination and group work. No previous experience playing an instrument is required." },
