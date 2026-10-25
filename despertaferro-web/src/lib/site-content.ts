@@ -117,6 +117,7 @@ export const content = {
       ],
       dates: [
         "Assaig de la secció — Dijous 19:30",
+        "Escoleta DF! — Dissabte 10:00",
         "Acte medieval — Pròximament",
       ],
       highlights: ["Bombos", "Tambors", "Passió", "Germanor"],
@@ -315,7 +316,11 @@ export const content = {
           ],
         },
       ],
-      dates: ["Ensayo de la sección — Jueves 19:30", "Acto medieval — Próximamente"],
+      dates: [
+        "Ensayo de la sección — Jueves 19:30",
+        "Escoleta DF! — Sábado 10:00",
+        "Acto medieval — Próximamente",
+      ],
       highlights: ["Bombos", "Tambores", "Pasión", "Hermandad"],
     },
     pages: {
@@ -512,7 +517,11 @@ export const content = {
           ],
         },
       ],
-      dates: ["Section rehearsal — Thursday 19:30", "Medieval event — Coming soon"],
+      dates: [
+        "Section rehearsal — Thursday 19:30",
+        "Escoleta DF! — Saturday 10:00",
+        "Medieval event — Coming soon",
+      ],
       highlights: ["Bass drums", "Drums", "Passion", "Brotherhood"],
     },
     pages: {

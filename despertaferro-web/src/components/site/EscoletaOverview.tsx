@@ -9,7 +9,7 @@ const copy = {
     how: "Com funciona",
     tuition: "Quota mensual",
     pending: "Preu i possibles descomptes familiars per confirmar.",
-    schedule: "A l’Ántic Quarter de Tetuán XIV, Castelló",
+    schedule: "Dissabte — A l’Ántic Quarter de Tetuán XIV, Castelló",
     start: "Inici previst: 14 de novembre de 2026.",
     slots: ["Primera franja: 10:00", "Segona franja: 11:00"],
     duration:
@@ -42,7 +42,7 @@ const copy = {
     how: "Cómo funciona",
     tuition: "Cuota mensual",
     pending: "Precio y posibles descuentos familiares por confirmar.",
-    schedule: "En el Antiguo Cuartel de Tetuán XIV, Castelló",
+    schedule: "Sábado — En el Antiguo Cuartel de Tetuán XIV, Castelló",
     start: "Inicio previsto: 14 de noviembre de 2026.",
     slots: ["Primera franja: 10:00", "Segunda franja: 11:00"],
     duration:
@@ -75,7 +75,7 @@ const copy = {
     how: "How it works",
     tuition: "Monthly tuition",
     pending: "Price and possible family discounts to be confirmed.",
-    schedule: "At the Tetuán XIV Old Barracks, Castelló",
+    schedule: "Saturday — At the Tetuán XIV Old Barracks, Castelló",
     start: "Planned start: 14 November 2026.",
     slots: ["First time slot: 10:00", "Second time slot: 11:00"],
     duration:
