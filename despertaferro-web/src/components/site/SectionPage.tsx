@@ -1,3 +1,5 @@
+import { EscoletaRegistration } from "./EscoletaRegistration";
+import { EscoletaOverview } from "./EscoletaOverview";
 import { Link } from "@tanstack/react-router";
 import {
   CalendarDays,
@@ -121,12 +123,12 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
           <PlaceholderPanel key={album} label={album}>
             <div className="flex h-52 w-full items-center justify-center overflow-hidden rounded-md border border-border bg-background/50">
               <ImageLightbox
-                src={galleryImages[index] ?? galleryImages[0]}
+                src={galleryImages[index] ?? galleryImages[0]!}
                 alt={album}
                 className="h-full w-full rounded-none"
               >
                 <img
-                  src={galleryImages[index] ?? galleryImages[0]}
+                  src={galleryImages[index] ?? galleryImages[0]!}
                   alt={album}
                   className="h-full w-full object-cover"
                   style={{ objectPosition: index === 1 ? "48% 20%" : "center" }}
@@ -144,17 +146,8 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
     const data = pageContent as (typeof content)[keyof typeof content]["pages"]["escola"];
     return (
       <div className="space-y-12">
-        <div className="grid gap-6 md:grid-cols-3">
-          {data.sections.map((item) => (
-            <TextPanel
-              key={item.title}
-              title={item.title}
-              text={item.text}
-              linkUrl={item.linkUrl}
-              linkLabel={item.linkLabel}
-            />
-          ))}
-        </div>
+        <EscoletaOverview />
+        <EscoletaRegistration />
 
         <div className="border-t border-brass pt-10">
           <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -221,7 +214,7 @@ function renderPageBody(page: Exclude<PageKey, "home">, pageContent: PageContent
               <div className="p-5">
                 <h2 className="font-nav text-3xl text-foreground">{product.title}</h2>
                 {product.description ? <p className="mt-3 text-muted-foreground">{product.description}</p> : null}
-                {product.price ? <p className="mt-4 font-nav text-2xl text-accent">{product.price}</p> : null}
+                {"price" in product && product.price ? <p className="mt-4 font-nav text-2xl text-accent">{product.price}</p> : null}
               </div>
             </article>
           ))}
@@ -290,7 +283,7 @@ function TextPanel({ title, text, linkUrl, linkLabel }: { title: string; text: s
   );
 }
 
-type InfoArticle = (typeof content)[keyof typeof content]["pages"]["info"]["articles"][number];
+type InfoArticle = { title: string; paragraphs: readonly string[]; imageLabel?: string; imageLabels?: readonly string[] };
 
 function InfoArticle({ article }: { article: InfoArticle }) {
   return (
@@ -345,9 +338,9 @@ function InfoArticle({ article }: { article: InfoArticle }) {
             return (
               <div key={label} className="space-y-3">
                 <div className={`flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md border border-border shadow-parchment ${index === 1 ? "bg-white" : "bg-iron"}`}>
-                  <ImageLightbox src={images[index] ?? images[0]} alt={label} className="h-full w-full rounded-none">
+                  <ImageLightbox src={images[index] ?? images[0]!} alt={label} className="h-full w-full rounded-none">
                     <img
-                      src={images[index] ?? images[0]}
+                      src={images[index] ?? images[0]!}
                       alt={label}
                       className={index < 2 ? "h-full w-full object-contain p-3" : "h-full w-full object-cover"}
                     />
