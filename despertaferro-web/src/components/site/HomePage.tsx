@@ -16,7 +16,7 @@ export function HomePage() {
       <section className="grid gap-8 lg:grid-cols-[1fr_22rem] lg:items-end">
         <div className="space-y-6">
           <PlaceholderPanel label={t.heroCaption}>
-            <div className="relative h-52 w-full max-w-3xl overflow-hidden rounded-md border border-border bg-iron text-iron-foreground shadow-medieval">
+            <div className="relative h-60 w-full max-w-3xl overflow-hidden rounded-md border border-border bg-iron text-iron-foreground shadow-medieval sm:h-72 lg:h-80">
               <ImageLightbox src="/Img_Inicio.jpeg" alt={t.heroAlt} className="h-full w-full rounded-none">
                 <img src="/Img_Inicio.jpeg" alt={t.heroAlt} className="h-full w-full object-cover object-center [object-position:center_20%]" />
               </ImageLightbox>

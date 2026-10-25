@@ -89,8 +89,7 @@ export function EscoletaRegistration() {
     <p ref={result} role="status" aria-live="polite" tabIndex={-1} className="my-4 text-lg">{message}</p>
     {!done&&<div className="flex flex-wrap gap-3">{step>0&&<button className="escoleta-button secondary" type="button" disabled={busy} onClick={()=>move(step-1)}>← Anterior</button>}{step<2?<button className="escoleta-button" type="button" onClick={advance}>Continuar →</button>:<button className="escoleta-button" type="submit" disabled={busy}>{busy?'Enviando…':'Enviar solicitud'}</button>}</div>}
    </form>
-   <aside className="h-fit rounded-md border border-border bg-vellum p-6 shadow-parchment"><h3 className="font-nav text-2xl">Antes de empezar</h3><p className="mt-3">Si eres mayor de edad, te inscribes sin tutor. Para inscribir menores, registra primero al padre, madre o tutor legal.</p><p className="mt-3">El tutor decide por separado si acompaña y si también recibe clases.</p><p className="mt-3">La escuela revisará la solicitud y os indicará el grupo y las condiciones de matrícula.</p><a className="mt-5 inline-block text-accent underline" href="https://forms.gle/WjuZWvS8DQa4nRnd7" target="_blank" rel="noopener noreferrer">Formulario de Google alternativo ↗</a></aside>
+   <aside className="h-fit rounded-md border border-border bg-vellum p-6 shadow-parchment"><h3 className="font-nav text-2xl">Antes de empezar</h3><p className="mt-3">Si eres mayor de edad, te inscribes sin tutor. Para inscribir menores, registra primero al padre, madre o tutor legal.</p><p className="mt-3">El tutor decide por separado si acompaña y si también recibe clases.</p><p className="mt-3">La escuela revisará la solicitud y os indicará el grupo y las condiciones de matrícula.</p><a className="mt-5 inline-block whitespace-nowrap text-accent underline" href="https://forms.gle/WjuZWvS8DQa4nRnd7" target="_blank" rel="noopener noreferrer">Formulario de Google&nbsp;↗</a></aside>
   </div>
  </section>;
 }
-
