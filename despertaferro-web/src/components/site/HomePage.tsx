@@ -13,12 +13,17 @@ export function HomePage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <section className="grid gap-8 lg:grid-cols-[1fr_22rem] lg:items-end">
+      <section className="reveal grid gap-8 lg:grid-cols-[1fr_22rem] lg:items-end">
         <div className="space-y-6">
           <PlaceholderPanel label={t.heroCaption}>
             <div className="relative h-60 w-full max-w-3xl overflow-hidden rounded-md border border-border bg-iron text-iron-foreground shadow-medieval sm:h-72 lg:h-80">
-              <ImageLightbox src="/Img_Inicio.jpeg" alt={t.heroAlt} className="h-full w-full rounded-none">
-                <img src="/Img_Inicio.jpeg" alt={t.heroAlt} className="h-full w-full object-cover object-center [object-position:center_20%]" />
+              <ImageLightbox src="/Img_Inicio.webp" alt={t.heroAlt} className="h-full w-full rounded-none">
+                <img
+                  src="/Img_Inicio.webp"
+                  alt={t.heroAlt}
+                  fetchPriority="high"
+                  className="h-full w-full object-cover object-center [object-position:center_20%]"
+                />
               </ImageLightbox>
             </div>
           </PlaceholderPanel>
@@ -28,9 +33,7 @@ export function HomePage() {
                 key={item}
                 className="border-b border-border/70 px-4 py-5 text-center last:border-b-0 sm:border-r sm:even:border-r-0 lg:border-b-0 lg:even:border-r lg:last:border-r-0"
               >
-                <span className="font-display text-2xl text-primary sm:text-3xl">
-                  {item}
-                </span>
+                <span className="font-display text-2xl text-primary sm:text-3xl">{item}</span>
               </li>
             ))}
           </ul>
@@ -48,15 +51,36 @@ export function HomePage() {
           <SectionTitle icon={<ScrollText aria-hidden="true" />} title={t.newsTitle} />
           <div className="space-y-8 py-8">
             {t.news.map((item) => (
-              <article key={item.title} className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[4rem_1fr]">
-                <div className="font-nav text-3xl text-accent">{item.month}</div>
+              <article
+                key={item.title}
+                className="reveal grid gap-4 border-b border-border pb-8 last:border-b-0 sm:grid-cols-[4.5rem_1fr]"
+              >
+                <time
+                  className="flex items-baseline gap-2 sm:flex-col sm:items-center sm:gap-0 sm:border-r sm:border-brass/60 sm:pr-4"
+                  dateTime={item.year}
+                >
+                  <span className="font-nav text-3xl leading-none text-accent">{item.month}</span>
+                  <span className="font-nav text-base text-muted-foreground">{item.year}</span>
+                </time>
                 <div>
+                  {item.tag ? (
+                    <span className="mb-3 inline-block rounded-sm border border-brass bg-brass/15 px-2.5 py-0.5 font-nav text-sm uppercase tracking-wide text-accent">
+                      {item.tag}
+                    </span>
+                  ) : null}
                   <h2 className="font-nav text-3xl leading-tight text-foreground">{item.title}</h2>
                   <div className="mt-4 space-y-4 text-lg leading-8 text-primary">
                     {item.text.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
+                  {item.linkLabel ? (
+                    <Button asChild variant="ember" className="mt-5">
+                      <Link to="/escola" hash="inscripcion-escoleta">
+                        {item.linkLabel}
+                      </Link>
+                    </Button>
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -68,7 +92,10 @@ export function HomePage() {
             <SectionTitle icon={<CalendarDays aria-hidden="true" />} title={t.datesTitle} />
             <div className="mt-6 space-y-3">
               {t.dates.map((item) => (
-                <div key={item} className="rounded-md border border-border bg-vellum p-4 text-primary shadow-parchment">
+                <div
+                  key={item}
+                  className="reveal card-lift rounded-md border border-border bg-vellum p-4 text-primary shadow-parchment"
+                >
                   {item}
                 </div>
               ))}

@@ -175,3 +175,50 @@
     letter-spacing: 0;
   }
 }
+
+/* ---------- Motion (kept subtle; disabled for visitors who prefer reduced motion) ---------- */
+
+html {
+  /* Leave room for the sticky header when jumping to #anchors. */
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .reveal-ready .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Lifts with `top` instead of `transform`: a transform would trap the fixed
+   image viewer (ImageLightbox) inside the hovered card. */
+@utility card-lift {
+  position: relative;
+  top: 0;
+  transition:
+    top 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    &:hover {
+      top: -3px;
+      border-color: var(--brass);
+      box-shadow:
+        0 18px 32px -20px var(--shadow-ink),
+        0 2px 0 var(--brass);
+    }
+  }
+}

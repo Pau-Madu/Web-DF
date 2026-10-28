@@ -8,29 +8,38 @@ const copy = {
     scheduleTitle: "Horaris",
     how: "Com funciona",
     tuition: "Quota mensual",
-    pending: "Preu i possibles descomptes familiars per confirmar.",
-    schedule: "Dissabte — A l’Ántic Quarter de Tetuán XIV, Castelló",
+    price: "40 € / mes per persona",
+    discount:
+      "30 € / mes per persona per a socis de la Germandat dels Cavallers de la Conquesta o per a dos o més membres de la mateixa unitat familiar.",
+    payment: "Pagament en efectiu el primer assaig de cada mes.",
+    schedule: "Dissabtes de 10:00 a 12:00 — Antic Quarter de Tetuán XIV (junt al circuit de seguretat vial), Castelló",
     start: "Inici previst: 14 de novembre de 2026.",
     slots: ["Primera franja: 10:00", "Segona franja: 11:00"],
-    duration:
-      "Duració pendent de concretar: 45–60 minuts. Nivell de cada franja per assignar.",
+    duration: "Classes d’uns 45 minuts. Els grups i les franges es concretaran pels professors.",
     levels:
-      "Iniciació i avançat, segons l’observació dels professors. Aforament previst: 10–15 alumnes per grup, per concretar.",
-    changes:
-      "Les actuacions poden requerir canvis de dia o hora. Festius i recuperacions es comunicaran quan s’acorden.",
+      "Grups d’iniciació i avançat, segons l’observació dels professors. Màxim de 10–15 alumnes per grup; s’estudiarà ampliar grups segons la participació.",
+    changes: "Les classes poden canviar de dia o hora si coincideixen amb una actuació de la secció titular.",
     steps: [
-      "Inscriu-te o registra la teua família.",
-      "L’escola revisa les places i assigna el grup.",
-      "Paga la quota al principi de mes pel sistema que s’acorde.",
-      "Vine a classe cada setmana, sense reservar cada sessió.",
+      "Ompli el formulari d’inscripció.",
+      "Els professors assignen el grup segons el nivell.",
+      "Paga la quota en efectiu el primer assaig de cada mes.",
+      "Vine a classe cada dissabte, sense reservar cada sessió.",
     ],
     material: "Material",
     materialText:
-      "Caixa sorda i suport recomanats; compra no obligatòria. Es treballarà també amb els instruments del cau. Disponibilitat de préstec per confirmar.",
+      "No cal comprar un tambor o bombo professional. Sí és necessari comprar una caixa sorda + suport per a practicar a classe i a casa (t’informarem d’on comprar-la). Quan el professorat ho indique, es practicarà amb els instruments propis de la secció.",
     absence: "Absències i recuperacions",
-    absenceText:
-      "Si falta l’alumne, perd la classe. Si cancel·la l’organització, es recupera un altre dia.",
-    join: "Incorporacions durant el curs, segons places. L’import del primer mes s’ajustarà si la incorporació és a mitjan mes.",
+    absenceText: [
+      "Si falta l’alumne, la classe compta com a perduda.",
+      "Si cancel·la l’organització, es recuperarà la classe un altre dia.",
+    ],
+    parades: "Desfilades",
+    paradesText:
+      "Els alumnes podran acompanyar la secció titular a les desfilades portant estendards, banderes i escuts. Tocaran amb la secció quan els professors ho consideren oportú, i sí ho faran al Pregó infantil de la Magdalena i a les actuacions pròpies de l’Escoleta. T’informarem de com fer-te la indumentària medieval.",
+    membership: "Soci de la Germandat",
+    membershipText:
+      "Com a secció interna de la Germandat dels Cavallers de la Conquesta, caldrà inscriure’s com a soci de l’associació quan ho indique l’organització de la secció.",
+    join: "La primera quota serà proporcional a les classes que queden del mes d’inici.",
     mapLink: "Veure el lloc d’assaig a Google Maps",
     mapHint: "Obri la ubicació exacta",
   },
@@ -41,29 +50,39 @@ const copy = {
     scheduleTitle: "Horarios",
     how: "Cómo funciona",
     tuition: "Cuota mensual",
-    pending: "Precio y posibles descuentos familiares por confirmar.",
-    schedule: "Sábado — En el Antiguo Cuartel de Tetuán XIV, Castelló",
+    price: "40 € / mes por persona",
+    discount:
+      "30 € / mes por persona para socios de la Germandat dels Cavallers de la Conquesta o para dos o más miembros de la misma unidad familiar.",
+    payment: "Pago en efectivo el primer ensayo de cada mes.",
+    schedule:
+      "Sábados de 10:00 a 12:00 — Antiguo Cuartel de Tetuán XIV (junto al circuito de seguridad vial), Castelló",
     start: "Inicio previsto: 14 de noviembre de 2026.",
     slots: ["Primera franja: 10:00", "Segunda franja: 11:00"],
-    duration:
-      "Duración pendiente de concretar: 45–60 minutos. Nivel de cada franja por asignar.",
+    duration: "Clases de unos 45 minutos. Los grupos y las franjas los concretarán los profesores.",
     levels:
-      "Iniciación y avanzado, según la observación de los profesores. Aforo previsto: 10–15 alumnos por grupo, por concretar.",
-    changes:
-      "Las actuaciones pueden requerir cambios de día u hora. Festivos y recuperaciones se comunicarán cuando se acuerden.",
+      "Grupos de iniciación y avanzado, según la observación de los profesores. Máximo de 10–15 alumnos por grupo; se estudiará ampliar grupos según la participación.",
+    changes: "Las clases pueden cambiar de día u hora si coinciden con una actuación de la sección titular.",
     steps: [
-      "Inscríbete o registra a tu familia.",
-      "La escuela revisa las plazas y asigna el grupo.",
-      "Paga la cuota al principio de mes mediante el sistema acordado.",
-      "Acude cada semana, sin reservar cada sesión.",
+      "Rellena el formulario de inscripción.",
+      "Los profesores asignan el grupo según el nivel.",
+      "Paga la cuota en efectivo el primer ensayo de cada mes.",
+      "Acude a clase cada sábado, sin reservar cada sesión.",
     ],
     material: "Material",
     materialText:
-      "Caja sorda y soporte recomendados; compra no obligatoria. También se trabajará con los instrumentos del cau. Disponibilidad de préstamo por confirmar.",
+      "No hace falta comprar un tambor o bombo profesional. Sí es necesario comprar una caja sorda + soporte para practicar en clase y en casa (te informaremos de dónde comprarla). Cuando el profesorado lo indique, se practicará con los instrumentos propios de la sección.",
     absence: "Ausencias y recuperaciones",
-    absenceText:
-      "Si falta el alumno, pierde la clase. Si cancela la organización, se recupera otro día.",
-    join: "Incorporaciones durante el curso, según plazas. El importe del primer mes se ajustará si la incorporación es a mitad de mes.",
+    absenceText: [
+      "Si falta el alumno, la clase cuenta como perdida.",
+      "Si cancela la organización, se recuperará la clase otro día.",
+    ],
+    parades: "Desfiles",
+    paradesText:
+      "Los alumnos podrán acompañar a la sección titular en los desfiles portando estandartes, banderas y escudos. Tocarán con la sección cuando los profesores lo consideren oportuno, y sí lo harán en el Pregó infantil de la Magdalena y en las actuaciones propias de la Escoleta. Te informaremos de cómo hacerte la indumentaria medieval.",
+    membership: "Socio de la Germandat",
+    membershipText:
+      "Como sección interna de la Germandat dels Cavallers de la Conquesta, será necesario inscribirse como socio de la asociación cuando lo indique la organización de la sección.",
+    join: "La primera cuota será proporcional a las clases que queden del mes de inicio.",
     mapLink: "Ver el lugar de ensayo en Google Maps",
     mapHint: "Abrir ubicación exacta",
   },
@@ -73,30 +92,39 @@ const copy = {
     times: "Timetable",
     scheduleTitle: "Timetable",
     how: "How it works",
-    tuition: "Monthly tuition",
-    pending: "Price and possible family discounts to be confirmed.",
-    schedule: "Saturday — At the Tetuán XIV Old Barracks, Castelló",
+    tuition: "Monthly fee",
+    price: "€40 / month per person",
+    discount:
+      "€30 / month per person for members of the Germandat dels Cavallers de la Conquesta, or for two or more members of the same family.",
+    payment: "Paid in cash at the first class of each month.",
+    schedule: "Saturdays 10:00–12:00 — Tetuán XIV Old Barracks (next to the road safety circuit), Castelló",
     start: "Planned start: 14 November 2026.",
     slots: ["First time slot: 10:00", "Second time slot: 11:00"],
-    duration:
-      "Duration to be confirmed: 45–60 minutes. Levels have not yet been assigned to time slots.",
+    duration: "Classes last about 45 minutes. Groups and time slots will be set by the teachers.",
     levels:
-      "Beginner and advanced groups, assigned by the teachers. Planned capacity: 10–15 students per group, to be confirmed.",
-    changes:
-      "Performances may require schedule changes. Holidays and make-up classes will be announced once agreed.",
+      "Beginner and advanced groups, assigned by the teachers. Up to 10–15 students per group; more groups may be added depending on demand.",
+    changes: "Classes may change day or time if they clash with a performance by the main section.",
     steps: [
-      "Apply for yourself or your family.",
-      "The school reviews availability and assigns a group.",
-      "Pay at the beginning of the month using the agreed payment method.",
-      "Attend weekly, without booking individual sessions.",
+      "Fill in the registration form.",
+      "The teachers assign your group based on level.",
+      "Pay the fee in cash at the first class of each month.",
+      "Come to class every Saturday, no need to book each session.",
     ],
     material: "Equipment",
     materialText:
-      "A practice pad and stand are recommended; purchase is optional. Classes also use the group’s instruments. Loan availability is to be confirmed.",
+      "You don’t need a professional drum. You do need to buy a practice pad + stand to practise in class and at home (we’ll tell you where to buy it). When the teachers say so, classes will use the section’s own instruments.",
     absence: "Absences and make-up classes",
-    absenceText:
-      "A student absence is not recovered. If the school cancels, the class will be rescheduled.",
-    join: "Join during the course, subject to availability. The first monthly fee will be adjusted for a mid-month start.",
+    absenceText: [
+      "If a student misses a class, it is not recovered.",
+      "If the school cancels, the class will be rescheduled.",
+    ],
+    parades: "Parades",
+    paradesText:
+      "Students may join the main section in parades carrying banners, flags and crests. They will play with the section when the teachers see fit, and will play at the children’s Pregó of the Magdalena festival and at the Escoleta’s own performances. We’ll explain how to get the medieval outfit.",
+    membership: "Germandat membership",
+    membershipText:
+      "As an internal section of the Germandat dels Cavallers de la Conquesta, students will need to join the association as members when the section asks.",
+    join: "The first fee is prorated to the classes remaining in the starting month.",
     mapLink: "View rehearsal location on Google Maps",
     mapHint: "Open exact location",
   },
@@ -106,49 +134,45 @@ export function EscoletaOverview() {
   const t = copy[language];
   return (
     <div className="space-y-10">
-      <div className="grid gap-6 md:grid-cols-[1fr_25rem]">
+      <div className="reveal grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:items-center">
         <div>
           <h2 className="font-display text-4xl">{t.title}</h2>
           <nav className="escoleta-overview-actions" aria-label={t.title}>
-            <a
-              className="escoleta-button escoleta-button-primary"
-              href="#inscripcion-escoleta"
-            >
+            <a className="escoleta-button escoleta-button-primary" href="#inscripcion-escoleta">
               {t.register}
             </a>
-            <a
-              className="escoleta-button escoleta-button-secondary"
-              href="#horarios-escoleta"
-            >
+            <a className="escoleta-button escoleta-button-secondary" href="#horarios-escoleta">
               {t.times}
             </a>
-            <a
-              className="escoleta-button escoleta-button-secondary"
-              href="#funcionamiento-escoleta"
-            >
+            <a className="escoleta-button escoleta-button-secondary" href="#funcionamiento-escoleta">
               {t.how}
             </a>
           </nav>
           <p className="mt-4 text-muted-foreground">{t.start}</p>
         </div>
-        <div className="rounded-md border border-brass bg-vellum p-7">
-          <h3 className="font-nav text-2xl">{t.tuition}</h3>
-          <p className="mt-3">{t.pending}</p>
-          <p className="mt-3 text-muted-foreground">{t.join}</p>
+        <div className="rounded-md border border-brass bg-vellum p-6">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+            <h3 className="font-nav text-2xl">{t.tuition}</h3>
+            <p className="font-display text-3xl text-accent">{t.price}</p>
+          </div>
+          <div className="mt-4 grid gap-x-6 gap-y-3 border-t border-border pt-4 sm:grid-cols-2">
+            <p>{t.discount}</p>
+            <div className="space-y-3">
+              <p>{t.payment}</p>
+              <p className="text-muted-foreground">{t.join}</p>
+            </div>
+          </div>
         </div>
       </div>
       <section
         id="horarios-escoleta"
-        className="scroll-mt-6 rounded-md border border-border bg-vellum p-6 shadow-parchment"
+        className="reveal scroll-mt-6 rounded-md border border-border bg-vellum p-6 shadow-parchment"
       >
         <h2 className="font-display text-4xl">{t.scheduleTitle}</h2>
         <p className="mt-3 font-nav text-2xl text-accent">{t.schedule}</p>
         <div className="my-5 grid gap-4 sm:grid-cols-2">
           {t.slots.map((s) => (
-            <div
-              key={s}
-              className="border border-border bg-background p-4 font-nav text-2xl"
-            >
+            <div key={s} className="border border-border bg-background p-4 font-nav text-2xl">
               {s}
             </div>
           ))}
@@ -165,9 +189,7 @@ export function EscoletaOverview() {
           <MapPin className="h-6 w-6 shrink-0 text-brass" aria-hidden="true" />
           <span>
             <span className="block font-nav text-lg">{t.mapLink}</span>
-            <span className="block text-sm text-primary-foreground/75">
-              {t.mapHint}
-            </span>
+            <span className="block text-sm text-primary-foreground/75">{t.mapHint}</span>
           </span>
         </a>
       </section>
@@ -175,28 +197,32 @@ export function EscoletaOverview() {
         <h2 className="font-display text-4xl">{t.how}</h2>
         <ol className="mt-5 grid gap-4 sm:grid-cols-2">
           {t.steps.map((s, i) => (
-            <li
-              key={s}
-              className="rounded-md border border-border bg-vellum p-5"
-            >
-              <span className="mr-3 font-display text-3xl text-accent">
-                {i + 1}.
-              </span>
+            <li key={s} className="reveal card-lift rounded-md border border-border bg-vellum p-5">
+              <span className="mr-3 font-display text-3xl text-accent">{i + 1}.</span>
               {s}
             </li>
           ))}
         </ol>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          {[
-            [t.material, t.materialText],
-            [t.absence, t.absenceText],
-          ].map(([title, text]) => (
-            <article
-              key={title}
-              className="rounded-md border border-border bg-vellum p-5"
-            >
+          {(
+            [
+              [t.material, t.materialText],
+              [t.parades, t.paradesText],
+              [t.absence, t.absenceText],
+              [t.membership, t.membershipText],
+            ] as [string, string | string[]][]
+          ).map(([title, text]) => (
+            <article key={title} className="reveal card-lift rounded-md border border-border bg-vellum p-5">
               <h3 className="font-nav text-2xl">{title}</h3>
-              <p className="mt-3">{text}</p>
+              {Array.isArray(text) ? (
+                <ul className="mt-3 list-disc space-y-2 pl-5">
+                  {text.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-3">{text}</p>
+              )}
             </article>
           ))}
         </div>
