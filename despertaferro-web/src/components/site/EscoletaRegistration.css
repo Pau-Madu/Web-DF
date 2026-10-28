@@ -1,0 +1,200 @@
+.escoleta-overview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.escoleta-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  font-family: "IM Fell English SC", serif;
+  font-size: 18px;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.escoleta-button-primary {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  box-shadow: 0 3px 8px rgb(42 32 18 / 14%);
+}
+
+.escoleta-button-secondary {
+  background: var(--background);
+  color: var(--primary);
+}
+
+.escoleta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgb(42 32 18 / 16%);
+}
+
+.escoleta-button-primary:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.escoleta-button-secondary:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.escoleta-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.escoleta-registration-card {
+  overflow: hidden;
+  border: 1px solid var(--brass);
+  border-radius: 6px;
+  background: var(--background);
+  box-shadow: 0 8px 24px rgb(42 32 18 / 8%);
+}
+
+.escoleta-registration-summary {
+  display: flex;
+  min-height: 132px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  background:
+    linear-gradient(110deg, rgb(151 105 39 / 10%), transparent 65%),
+    var(--background);
+  cursor: pointer;
+  list-style: none;
+}
+
+.escoleta-registration-summary::-webkit-details-marker {
+  display: none;
+}
+
+.escoleta-registration-summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.escoleta-registration-summary > span:first-child {
+  display: grid;
+  gap: 5px;
+}
+
+.escoleta-registration-eyebrow {
+  color: var(--muted-foreground);
+  font-family: "IM Fell English SC", serif;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.escoleta-registration-title {
+  color: var(--foreground);
+  font-family: "IM Fell English SC", serif;
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.escoleta-registration-description {
+  color: var(--muted-foreground);
+  font-size: 16px;
+}
+
+.escoleta-registration-action {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-size: 16px;
+}
+
+.escoleta-registration-chevron {
+  font-size: 22px;
+  transition: transform 160ms ease;
+}
+
+.escoleta-registration-card[open] .escoleta-registration-chevron {
+  transform: rotate(180deg);
+}
+
+.escoleta-form-content {
+  padding: 0 20px 20px;
+}
+
+.escoleta-form-frame {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--background);
+}
+
+.escoleta-form-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(460px, 68vh, 760px);
+  border: 0;
+  background: var(--background);
+}
+
+@media (max-width: 640px) {
+  .escoleta-overview-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .escoleta-overview-actions .escoleta-button {
+    width: 100%;
+  }
+
+  .escoleta-registration-summary {
+    min-height: 0;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .escoleta-registration-action {
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .escoleta-registration-description {
+    max-width: 28rem;
+    font-size: 14px;
+  }
+
+  .escoleta-form-content {
+    padding: 0 10px 14px;
+  }
+
+  .escoleta-form-frame iframe {
+    height: clamp(520px, 72vh, 820px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .escoleta-button,
+  .escoleta-registration-chevron {
+    transition: none;
+  }
+
+  .escoleta-button:hover {
+    transform: none;
+  }
+}

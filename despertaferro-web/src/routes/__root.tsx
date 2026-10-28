@@ -1,34 +1,53 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteShell } from "../components/site/SiteShell";
-import { LanguageProvider } from "../lib/language";
+import { LanguageProvider, useLanguageOrDefault } from "../lib/language";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const fallbackCopy = {
+  va: {
+    notFoundTitle: "Pàgina no trobada",
+    notFoundText: "La pàgina que busques no existeix o s'ha mogut.",
+    home: "Tornar a l'inici",
+    errorTitle: "Aquesta pàgina no s'ha pogut carregar",
+    errorText: "Alguna cosa ha fallat. Pots tornar-ho a provar o anar a l'inici.",
+    retry: "Tornar a provar",
+  },
+  es: {
+    notFoundTitle: "Página no encontrada",
+    notFoundText: "La página que buscas no existe o se ha movido.",
+    home: "Volver al inicio",
+    errorTitle: "Esta página no se ha podido cargar",
+    errorText: "Algo ha fallado. Puedes volver a intentarlo o ir al inicio.",
+    retry: "Volver a intentar",
+  },
+  en: {
+    notFoundTitle: "Page not found",
+    notFoundText: "The page you're looking for doesn't exist or has been moved.",
+    home: "Go home",
+    errorTitle: "This page didn't load",
+    errorText: "Something went wrong. You can try again or head back home.",
+    retry: "Try again",
+  },
+};
+
 function NotFoundComponent() {
+  const t = fallbackCopy[useLanguageOrDefault()];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-[60vh] items-center justify-center px-4 py-16">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
+        <p className="font-display text-8xl text-accent">404</p>
+        <h1 className="mt-4 font-display text-4xl text-foreground">{t.notFoundTitle}</h1>
+        <p className="mt-3 text-lg text-muted-foreground">{t.notFoundText}</p>
+        <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 font-nav text-lg text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            {t.home}
           </Link>
         </div>
       </div>
@@ -39,6 +58,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+  const t = fallbackCopy[useLanguageOrDefault()];
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
@@ -46,27 +66,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <h1 className="font-display text-4xl text-foreground">{t.errorTitle}</h1>
+        <p className="mt-3 text-lg text-muted-foreground">{t.errorText}</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 font-nav text-lg text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            {t.retry}
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-md border border-border bg-vellum px-5 py-3 font-nav text-lg text-foreground transition-colors hover:border-brass"
           >
-            Go home
+            {t.home}
           </a>
         </div>
       </div>
@@ -103,7 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ca-ES-valencia">
       <head>
         <HeadContent />
       </head>
