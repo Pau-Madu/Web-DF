@@ -380,11 +380,11 @@ export const content = {
           {
             kind: "phone",
             title: "Telèfon de contacte:",
-            value: "Sergio · 628 48 23 55",
-            href: "tel:+34628482355",
+            value: "Sergio · 628 48 53 55",
+            href: "tel:+34628485355",
             actionLabel: "Trucar",
             secondaryHref:
-              "https://wa.me/34628482355?text=Hola%21%20Voldria%20informaci%C3%B3%20sobre%20Desperta%2C%20Ferro%21",
+              "https://wa.me/34628485355?text=Hola%21%20Voldria%20informaci%C3%B3%20sobre%20Desperta%2C%20Ferro%21",
             secondaryLabel: "WhatsApp",
             locked: false,
           },
@@ -420,7 +420,7 @@ export const content = {
           },
         ],
         phoneLabel: "Telèfon de contacte",
-        phone: "628482355",
+        phone: "628485355",
         legal: [
           "Pertany a: Germandat dels Cavallers de la Conquesta de Castelló.",
           "NIF G-12.070.090",
@@ -762,11 +762,11 @@ export const content = {
           {
             kind: "phone",
             title: "Teléfono de contacto:",
-            value: "Sergio · 628 48 23 55",
-            href: "tel:+34628482355",
+            value: "Sergio · 628 48 53 55",
+            href: "tel:+34628485355",
             actionLabel: "Llamar",
             secondaryHref:
-              "https://wa.me/34628482355?text=%C2%A1Hola%21%20Quer%C3%ADa%20informaci%C3%B3n%20sobre%20Desperta%2C%20Ferro%21",
+              "https://wa.me/34628485355?text=%C2%A1Hola%21%20Quer%C3%ADa%20informaci%C3%B3n%20sobre%20Desperta%2C%20Ferro%21",
             secondaryLabel: "WhatsApp",
             locked: false,
           },
@@ -802,7 +802,7 @@ export const content = {
           },
         ],
         phoneLabel: "Teléfono de contacto",
-        phone: "628482355",
+        phone: "628485355",
         legal: [
           "Pertenece a: Germandat dels Cavallers de la Conquesta de Castellón.",
           "NIF G-12.070.090",
@@ -1126,11 +1126,11 @@ export const content = {
           {
             kind: "phone",
             title: "Contact phone:",
-            value: "Sergio · 628 48 23 55",
-            href: "tel:+34628482355",
+            value: "Sergio · 628 48 53 55",
+            href: "tel:+34628485355",
             actionLabel: "Call",
             secondaryHref:
-              "https://wa.me/34628482355?text=Hi%21%20I%20would%20like%20information%20about%20Desperta%2C%20Ferro%21",
+              "https://wa.me/34628485355?text=Hi%21%20I%20would%20like%20information%20about%20Desperta%2C%20Ferro%21",
             secondaryLabel: "WhatsApp",
             locked: false,
           },
@@ -1166,7 +1166,7 @@ export const content = {
           },
         ],
         phoneLabel: "Contact phone",
-        phone: "628482355",
+        phone: "628485355",
         legal: [
           "Belongs to: Germandat dels Cavallers de la Conquesta de Castellón.",
           "NIF G-12.070.090",
