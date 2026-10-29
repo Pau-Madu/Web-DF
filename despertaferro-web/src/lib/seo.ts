@@ -1,7 +1,7 @@
 import { routeMeta, type PageKey } from "./site-content";
 
 export const SITE_URL = "https://despertaferro-cs.web.app";
-export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+export const OG_IMAGE = `${SITE_URL}/og-image.jpg?v=2`;
 
 const paths: Record<PageKey, string> = {
   home: "/",
