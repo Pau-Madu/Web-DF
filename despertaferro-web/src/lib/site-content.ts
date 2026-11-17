@@ -20,6 +20,11 @@ export const navItems = [
   { key: "contacte", to: "/contacte" },
 ] as const satisfies ReadonlyArray<{ key: PageKey; to: string }>;
 
+export const socialLinks = {
+  instagram: "https://www.instagram.com/desperta_ferro_cs/",
+  youtube: "https://www.youtube.com/@desperta.ferro_CS",
+} as const;
+
 export const routeMeta: Record<PageKey, { title: string; description: string }> = {
   home: {
     title: "Desperta, Ferro! — Tambors i Bombos de combat",
@@ -46,7 +51,7 @@ export const routeMeta: Record<PageKey, { title: string; description: string }> 
   escola: {
     title: "Escoleta — Desperta, Ferro!",
     description:
-      "Escoleta de percussió a Castelló per a xiquets, joves i adults. Dissabtes de 10:00 a 12:00, des de 40 €/mes. Inici: 14 de novembre de 2026.",
+      "Escoleta de percussió a Castelló per a xiquets, joves i adults. Dissabtes de 10:00 a 12:00, des de 40 €/mes. Inici: 21 de novembre de 2026. Primera classe gratuïta.",
   },
   merchandising: {
     title: "Merchandising — Desperta, Ferro!",
@@ -72,6 +77,11 @@ export const content = {
       close: "Tancar",
       footer: "2026 By Pau Madueño © Desperta, Ferro! ",
       contactCta: "Contacte",
+      navLabel: "Menú principal",
+      mobileNavLabel: "Menú principal (mòbil)",
+      socialLabel: "Xarxes socials",
+      instagram: "Instagram",
+      youtube: "YouTube",
     },
     nav: {
       home: "INICI",
@@ -100,8 +110,9 @@ export const content = {
           tag: "Inscripcions obertes",
           title: "Naix l'Escoleta DF!",
           text: [
-            "El dissabte 14 de novembre comencen les classes de l'Escoleta, la nostra escola de percussió per a xiquets, joves i adults. No cal saber música: t'ensenyen professionals amb estudis de conservatori i àmplia trajectòria dins de la secció.",
+            "El dissabte 21 de novembre comencen les classes de l'Escoleta, la nostra escola de percussió per a xiquets, joves i adults. No cal saber música: t'ensenyen professionals amb estudis de conservatori i àmplia trajectòria dins de la secció.",
             "Classes els dissabtes al matí a l'Antic Quarter de Tetuán XIV, amb grups reduïts d'iniciació i avançat.",
+            "La primera classe de cada alumne és gratuïta i sense compromís: només cal inscriure's abans al formulari.",
           ],
           linkLabel: "Inscriu-te a l'Escoleta",
         },
@@ -128,7 +139,7 @@ export const content = {
       ],
       dates: [
         "Assaig de la secció — Dijous de 20:00 a 21:00",
-        "Escoleta DF! — Dissabtes de 10:00 a 12:00 (inici 14 de novembre)",
+        "Escoleta DF! — Dissabtes de 10:00 a 12:00 (inici 21 de novembre, primera classe gratuïta)",
         "Acte medieval — Pròximament",
       ],
       highlights: ["Bombos", "Tambors", "Passió", "Germanor"],
@@ -436,7 +447,7 @@ export const content = {
   es: {
     brand: {
       kickerLeft: "Tambores y Bombos de combate",
-      kickerRight: "Hermandad de los Caballeros de la Conquista",
+      kickerRight: "Germandat dels Cavallers de la Conquesta",
       since: "Desde 2012",
       place: "Castelló de la Plana",
       nameA: "DESPERTA,",
@@ -446,6 +457,11 @@ export const content = {
       close: "Cerrar",
       footer: "2026 By Pau Madueño © Desperta, Ferro! ",
       contactCta: "Contacto",
+      navLabel: "Menú principal",
+      mobileNavLabel: "Menú principal (móvil)",
+      socialLabel: "Redes sociales",
+      instagram: "Instagram",
+      youtube: "YouTube",
     },
     nav: {
       home: "INICIO",
@@ -474,8 +490,9 @@ export const content = {
           tag: "Inscripciones abiertas",
           title: "Nace la Escoleta DF!",
           text: [
-            "El sábado 14 de noviembre empiezan las clases de la Escoleta, nuestra escuela de percusión para niños, jóvenes y adultos. No hace falta saber música: te enseñan profesionales con estudios de conservatorio y amplia trayectoria dentro de la sección.",
+            "El sábado 21 de noviembre empiezan las clases de la Escoleta, nuestra escuela de percusión para niños, jóvenes y adultos. No hace falta saber música: te enseñan profesionales con estudios de conservatorio y amplia trayectoria dentro de la sección.",
             "Clases los sábados por la mañana en el Antiguo Cuartel de Tetuán XIV, con grupos reducidos de iniciación y avanzado.",
+            "La primera clase de cada alumno es gratuita y sin compromiso: solo hay que inscribirse antes en el formulario.",
           ],
           linkLabel: "Inscríbete en la Escoleta",
         },
@@ -502,7 +519,7 @@ export const content = {
       ],
       dates: [
         "Ensayo de la sección — Jueves de 20:00 a 21:00",
-        "Escoleta DF! — Sábados de 10:00 a 12:00 (inicio 14 de noviembre)",
+        "Escoleta DF! — Sábados de 10:00 a 12:00 (inicio 21 de noviembre, primera clase gratuita)",
         "Acto medieval — Próximamente",
       ],
       highlights: ["Bombos", "Tambores", "Pasión", "Hermandad"],
@@ -519,7 +536,7 @@ export const content = {
           },
           {
             title: "Raíces",
-            text: "Nacemos dentro del entorno de la Hermandad de los Caballeros de la Conquista y mantenemos vivo el imaginario de Na Violant y el Rey Jaime I.",
+            text: "Nacemos dentro del entorno de la Germandat dels Cavallers de la Conquesta y mantenemos vivo el imaginario de Na Violant y el Rey Jaime I.",
           },
           {
             title: "Participación",
@@ -537,19 +554,19 @@ export const content = {
           {
             title: "Historia",
             paragraphs: [
-              "Todo comenzó con las ganas de superación y de crecer, musicalmente hablando, de un grupo de jóvenes que, gracias a la cofradía Santa Maria Magdalena de Castellón, conocieron el mundo de los Tambores y Bombos tanto en el ámbito de la Semana Santa como en el ámbito festivo de la ciudad junto con la Hermandad de los Caballeros de la Conquista.",
-              'La decisión de formar un grupo nuevo de Tambores en nuestra ciudad no fue fácil, ya que no es fácil crear una sección sin material, miembros y sin posibles actos para darse a conocer. Una vez tomada la decisión, y gracias a la Hermandad de los Caballeros de la Conquista, la sección tomó forma dentro del seno de la asociación con solo 7 miembros (14 a día de hoy) y en el mes de octubre de 2012 comenzaron con los ensayos y la creación de nuevos toques, así como la elección de un nombre adecuado ("Tambores y Bombos de combate - Desperta Ferro! -") y la redacción de sus estatutos o reglamento interno.',
+              "Todo comenzó con las ganas de superación y de crecer, musicalmente hablando, de un grupo de jóvenes que, gracias a la cofradía Santa Maria Magdalena de Castellón, conocieron el mundo de los Tambores y Bombos tanto en el ámbito de la Semana Santa como en el ámbito festivo de la ciudad junto con la Germandat dels Cavallers de la Conquesta.",
+              'La decisión de formar un grupo nuevo de Tambores en nuestra ciudad no fue fácil, ya que no es fácil crear una sección sin material, miembros y sin posibles actos para darse a conocer. Una vez tomada la decisión, y gracias a la Germandat dels Cavallers de la Conquesta, la sección tomó forma dentro del seno de la asociación con solo 7 miembros (14 a día de hoy) y en el mes de octubre de 2012 comenzaron con los ensayos y la creación de nuevos toques, así como la elección de un nombre adecuado ("Tambores y Bombos de combate - Desperta Ferro! -") y la redacción de sus estatutos o reglamento interno.',
               "La sección tiene al frente del ámbito musical al joven de 17 años Eduardo Picazo Ferreiro, que desde muy pequeño ha demostrado sus dotes en el mundo de la percusión y la pasión que siente por golpear cualquier tipo de instrumento. Edu está estudiando el grado profesional de percusión en el Conservatorio de música de la ciudad y, gracias principalmente a su habilidad, la sección ha ido avanzando con nuevas marchas y toques.",
-              "La sección se fijó como fecha de estreno la Proclamación de la máxima representante de la Hermandad para las fiestas de la Magdalena de 2013, Marta Font Ramos. Aquello marcó el inicio de un nuevo año festivo y permitió dar a conocer al nuevo grupo de jóvenes que, a partir de ese día, pondrían el ritmo en los desfiles y actos de los Caballeros.",
+              "La sección se fijó como fecha de estreno la Proclamación de la máxima representante de la Germandat para las fiestas de la Magdalena de 2013, Marta Font Ramos. Aquello marcó el inicio de un nuevo año festivo y permitió dar a conocer al nuevo grupo de jóvenes que, a partir de ese día, pondrían el ritmo en los desfiles y actos de los Caballeros.",
             ],
           },
           {
             title: "¿Por qué “DESPERTA, FERRO!”?",
             paragraphs: [
-              "Cuando pensábamos en un nombre adecuado para una sección de tambores y bombos integrada en el seno de la Hermandad de los Caballeros de la Conquista era necesario poner a funcionar la cabeza. El objetivo era encontrar un nombre medieval, relacionado con nuestra historia y la época de Jaime I, y al mismo tiempo poderoso, contundente y lleno de fuerza.",
+              "Cuando pensábamos en un nombre adecuado para una sección de tambores y bombos integrada en el seno de la Germandat dels Cavallers de la Conquesta era necesario poner a funcionar la cabeza. El objetivo era encontrar un nombre medieval, relacionado con nuestra historia y la época de Jaime I, y al mismo tiempo poderoso, contundente y lleno de fuerza.",
               "Tras numerosas discusiones, un nombre destacó sobre los demás: Desperta, ferro! Era el grito característico de las temibles tropas almogávares, avanzadilla de muchos episodios de las conquistas de la Corona de Aragón, también en tiempos del rey Conquistador.",
               "El nombre encajaba a la perfección con el espíritu de esfuerzo, superación y fuerza que pretendíamos que caracterizara a esta joven sección. El sonido de las armas de los almogávares contra sus escudos nos recuerda la fuerza con la que nuestros componentes golpean los parches de sus bombos y tambores.",
-              "Así fue como el grito de guerra de los valientes almogávares daría nombre a la nueva sección de la Hermandad: los Tambores y Bombos de Combate de la Hermandad de los Caballeros de la Conquista — Desperta, Ferro! — Milites Carrocius.",
+              "Así fue como el grito de guerra de los valientes almogávares daría nombre a la nueva sección de la Germandat: los Tambores y Bombos de Combate de la Germandat dels Cavallers de la Conquesta — Desperta, Ferro! — Milites Carrocius.",
             ],
           },
           {
@@ -567,7 +584,7 @@ export const content = {
             title: "Nuestros distintivos",
             paragraphs: [
               "Pendón de la Sección: el emblema diseñado para nuestra sección se compone, sobre un fondo cuatribarrado recortado con la silueta del Pendón de la Conquista, de un círculo que representa un bombo de madera y piel. En el centro figura el castillo de Castellón y, detrás, dos cuchillos o espadas almogávares dispuestos en aspa con una actitud combativa.",
-              "Imagen representativa: el escudo diseñado para nuestra sección es una adaptación de nuestro emblema-pendón. Mantiene la senyera de las cuatro barras y la adapta para representar los instrumentos de percusión. La ondulación de las barras transmite la vibración de los instrumentos y el movimiento del pendón en la marcha. También lleva el nombre de la sección y el escudo de la Hermandad de los Caballeros de la Conquista.",
+              "Imagen representativa: el escudo diseñado para nuestra sección es una adaptación de nuestro emblema-pendón. Mantiene la senyera de las cuatro barras y la adapta para representar los instrumentos de percusión. La ondulación de las barras transmite la vibración de los instrumentos y el movimiento del pendón en la marcha. También lleva el nombre de la sección y el escudo de la Germandat dels Cavallers de la Conquesta.",
             ],
             imageLabels: ["Pendón de la sección", "Imagen representativa", "Emblema de Desperta, Ferro!"],
           },
@@ -818,7 +835,7 @@ export const content = {
   en: {
     brand: {
       kickerLeft: "Battle drums and bass drums",
-      kickerRight: "Brotherhood of the Knights of the Conquest",
+      kickerRight: "Germandat dels Cavallers de la Conquesta",
       since: "Since 2012",
       place: "Castelló de la Plana",
       nameA: "DESPERTA,",
@@ -828,6 +845,11 @@ export const content = {
       close: "Close",
       footer: "2026 By Pau Madueño © Desperta, Ferro! ",
       contactCta: "Contact",
+      navLabel: "Main menu",
+      mobileNavLabel: "Main menu (mobile)",
+      socialLabel: "Social media",
+      instagram: "Instagram",
+      youtube: "YouTube",
     },
     nav: {
       home: "HOME",
@@ -856,8 +878,9 @@ export const content = {
           tag: "Registration open",
           title: "The Escoleta DF! is born",
           text: [
-            "On Saturday 14 November the Escoleta begins: our percussion school for children, young people and adults. No musical experience needed: you'll learn from conservatory-trained percussionists with long experience in the section.",
+            "On Saturday 21 November the Escoleta begins: our percussion school for children, young people and adults. No musical experience needed: you'll learn from conservatory-trained percussionists with long experience in the section.",
             "Classes on Saturday mornings at the Tetuán XIV Old Barracks, in small beginner and advanced groups.",
+            "Every student's first class is free and with no commitment: you just need to sign up on the form beforehand.",
           ],
           linkLabel: "Sign up for the Escoleta",
         },
@@ -884,7 +907,7 @@ export const content = {
       ],
       dates: [
         "Section rehearsal — Thursdays 20:00–21:00",
-        "Escoleta DF! — Saturdays 10:00–12:00 (starts 14 November)",
+        "Escoleta DF! — Saturdays 10:00–12:00 (starts 21 November, first class free)",
         "Medieval event — Coming soon",
       ],
       highlights: ["Bass drums", "Drums", "Passion", "Brotherhood"],
@@ -901,7 +924,7 @@ export const content = {
           },
           {
             title: "Roots",
-            text: "Born around the Brotherhood of the Knights of the Conquest, keeping the imagery of Na Violant and King James I alive.",
+            text: "Born around the Germandat dels Cavallers de la Conquesta, keeping the imagery of Na Violant and King James I alive.",
           },
           {
             title: "Participation",
@@ -919,19 +942,19 @@ export const content = {
           {
             title: "History",
             paragraphs: [
-              "It began with the desire of a group of young people to grow musically after discovering drums and bass drums through the Santa Maria Magdalena Brotherhood of Castelló and the Brotherhood of the Knights of the Conquest.",
-              'The decision to form a new drum section in our city was not easy, because it is not easy to create a section without material, members and without events where it could make itself known. Once the decision was made, and thanks to the Brotherhood of the Knights of the Conquest, the section took shape within the association with only 7 members (14 today) and in October 2012 they began rehearsals and the creation of new rhythms, as well as choosing an appropriate name ("Battle drums and bass drums - Desperta Ferro! -") and drafting their internal statutes or regulations.',
+              "It began with the desire of a group of young people to grow musically after discovering drums and bass drums through the Santa Maria Magdalena Brotherhood of Castelló and the Germandat dels Cavallers de la Conquesta.",
+              'The decision to form a new drum section in our city was not easy, because it is not easy to create a section without material, members and without events where it could make itself known. Once the decision was made, and thanks to the Germandat dels Cavallers de la Conquesta, the section took shape within the association with only 7 members (14 today) and in October 2012 they began rehearsals and the creation of new rhythms, as well as choosing an appropriate name ("Battle drums and bass drums - Desperta Ferro! -") and drafting their internal statutes or regulations.',
               "The section is led musically by the 17-year-old Eduardo Picazo Ferreiro, who from a very young age has shown his talents in the world of percussion and the passion he feels for striking any kind of instrument. Edu is studying the professional percussion degree at the city's Conservatory of Music and, thanks mainly to his skill, the section has continued to advance with new marches and rhythms.",
-              "The section chose as its debut the Proclamation of the Brotherhood's leading representative for the 2013 Magdalena festivities, Marta Font Ramos. That event marked the start of a new festive year and introduced the new group of young people who, from that day on, would set the rhythm of the Knights' parades and events.",
+              "The section chose as its debut the Proclamation of the Germandat's leading representative for the 2013 Magdalena festivities, Marta Font Ramos. That event marked the start of a new festive year and introduced the new group of young people who, from that day on, would set the rhythm of the Knights' parades and events.",
             ],
           },
           {
             title: "Why “DESPERTA, FERRO!”?",
             paragraphs: [
-              "When we were thinking of a suitable name for a section of drums and bass drums integrated into the Brotherhood of the Knights of the Conquest, we had to put our heads together. The aim was to find a medieval name related to our history and the era of James I, while also powerful, forceful and full of strength.",
+              "When we were thinking of a suitable name for a section of drums and bass drums integrated into the Germandat dels Cavallers de la Conquesta, we had to put our heads together. The aim was to find a medieval name related to our history and the era of James I, while also powerful, forceful and full of strength.",
               "After numerous discussions, one name stood out above the rest: Desperta, ferro! It was the characteristic cry of the formidable Almogavars, vanguard of many episodes of the conquests of the Crown of Aragon, also in the time of the Conqueror king.",
               "The name fit perfectly with the spirit of effort, improvement and strength that we wanted to characterize this young section. The sound of the Almogavars' weapons against their shields reminds us of the force with which our members beat the skins of their drums and bass drums.",
-              "This is how the war cry of the brave Almogavars would give a name to the new section of the Brotherhood: the Drums and Bass Drums of Combat of the Brotherhood of the Knights of the Conquest — Desperta, Ferro! — Milites Carrocius.",
+              "This is how the war cry of the brave Almogavars would give a name to the new section of the Germandat: the Drums and Bass Drums of Combat of the Germandat dels Cavallers de la Conquesta — Desperta, Ferro! — Milites Carrocius.",
             ],
           },
           {
@@ -949,7 +972,7 @@ export const content = {
             title: "Our insignia",
             paragraphs: [
               "Section banner: the emblem designed for our section is composed, on a four-barred background cut with the silhouette of the Banner of the Conquest, of a circle representing a bass drum made of wood and skin. In the centre is the castle of Castellón and, behind it, two knives or Almogavar swords arranged in an X with a combative attitude.",
-              "Representative image: the shield designed for our section is an adaptation of our banner emblem. It keeps the senyera of the four bars and adapts it to represent the percussion instruments. The undulation of the bars conveys the vibration of the instruments and the movement of the banner in the march. It also bears the name of the section and the crest of the Brotherhood of the Knights of the Conquest.",
+              "Representative image: the shield designed for our section is an adaptation of our banner emblem. It keeps the senyera of the four bars and adapts it to represent the percussion instruments. The undulation of the bars conveys the vibration of the instruments and the movement of the banner in the march. It also bears the name of the section and the crest of the Germandat dels Cavallers de la Conquesta.",
             ],
             imageLabels: ["Section banner", "Representative image", "Desperta, Ferro! emblem"],
           },

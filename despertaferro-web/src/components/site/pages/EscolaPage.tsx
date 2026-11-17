@@ -1,3 +1,4 @@
+import { EscoletaFreeClass } from "@/components/site/EscoletaFreeClass";
 import { EscoletaOverview } from "@/components/site/EscoletaOverview";
 import { EscoletaRegistration } from "@/components/site/EscoletaRegistration";
 import { LiteYouTube } from "@/components/site/LiteYouTube";
@@ -8,6 +9,7 @@ export function EscolaPage() {
   const data = usePageContent("escola");
   return (
     <div className="space-y-12">
+      <EscoletaFreeClass />
       <div className="grid gap-5 md:grid-cols-2">
         {data.sections
           .filter((item) => !("linkUrl" in item))

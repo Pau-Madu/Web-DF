@@ -13,7 +13,7 @@ const copy = {
       "30 € / mes per persona per a socis de la Germandat dels Cavallers de la Conquesta o per a dos o més membres de la mateixa unitat familiar.",
     payment: "Pagament en efectiu el primer assaig de cada mes.",
     schedule: "Dissabtes de 10:00 a 12:00 — Antic Quarter de Tetuán XIV (junt al circuit de seguretat vial), Castelló",
-    start: "Inici previst: 14 de novembre de 2026.",
+    start: "Primera classe: dissabte 21 de novembre de 2026. La primera classe de cada alumne és gratuïta.",
     slots: ["Primera franja: 10:00", "Segona franja: 11:00"],
     duration: "Classes d’uns 45 minuts. Els grups i les franges es concretaran pels professors.",
     levels:
@@ -56,7 +56,7 @@ const copy = {
     payment: "Pago en efectivo el primer ensayo de cada mes.",
     schedule:
       "Sábados de 10:00 a 12:00 — Antiguo Cuartel de Tetuán XIV (junto al circuito de seguridad vial), Castelló",
-    start: "Inicio previsto: 14 de noviembre de 2026.",
+    start: "Primera clase: sábado 21 de noviembre de 2026. La primera clase de cada alumno es gratuita.",
     slots: ["Primera franja: 10:00", "Segunda franja: 11:00"],
     duration: "Clases de unos 45 minutos. Los grupos y las franjas los concretarán los profesores.",
     levels:
@@ -98,7 +98,7 @@ const copy = {
       "€30 / month per person for members of the Germandat dels Cavallers de la Conquesta, or for two or more members of the same family.",
     payment: "Paid in cash at the first class of each month.",
     schedule: "Saturdays 10:00–12:00 — Tetuán XIV Old Barracks (next to the road safety circuit), Castelló",
-    start: "Planned start: 14 November 2026.",
+    start: "First class: Saturday 21 November 2026. Every student's first class is free.",
     slots: ["First time slot: 10:00", "Second time slot: 11:00"],
     duration: "Classes last about 45 minutes. Groups and time slots will be set by the teachers.",
     levels:

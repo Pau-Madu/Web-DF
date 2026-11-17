@@ -1,9 +1,9 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Languages, Menu, X } from "lucide-react";
+import { Instagram, Languages, Menu, X, Youtube } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
-import { content, languages, navItems } from "@/lib/site-content";
+import { content, languages, navItems, socialLinks } from "@/lib/site-content";
 import { useLanguage } from "@/lib/language";
 import { useRevealOnScroll } from "@/hooks/use-reveal-on-scroll";
 import { MedievalLogo } from "./MedievalLogo";
@@ -104,7 +104,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 </Button>
               ))}
             </div>
-            <nav className="grid gap-2 sm:grid-cols-2" aria-label="Principal mòbil">
+            <nav className="grid gap-2 sm:grid-cols-2" aria-label={t.brand.mobileNavLabel}>
               {navItems.map((item) => (
                 <Link
                   key={item.key}
@@ -125,7 +125,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       {/* Desktop menu: stays fixed at the top while scrolling. */}
       <nav
         className="sticky top-0 z-40 hidden border-y border-brass bg-background/90 shadow-parchment backdrop-blur lg:block"
-        aria-label="Principal"
+        aria-label={t.brand.navLabel}
       >
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-1 px-8 py-1.5">
           {navItems.map((item) => (
@@ -154,9 +154,33 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </p>
             <p className="pt-2 font-serif text-sm text-iron-foreground/60">{t.brand.footer}</p>
           </div>
-          <Button asChild variant="ember" className="self-start lg:self-auto">
-            <Link to="/contacte">{t.brand.contactCta}</Link>
-          </Button>
+          <div className="flex flex-wrap items-center gap-3 self-start lg:self-auto">
+            <nav aria-label={t.brand.socialLabel} className="flex items-center gap-2">
+              <a
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t.brand.instagram}
+                title={t.brand.instagram}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-brass/60 text-brass transition-colors hover:bg-brass hover:text-iron"
+              >
+                <Instagram className="h-5 w-5" aria-hidden="true" />
+              </a>
+              <a
+                href={socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t.brand.youtube}
+                title={t.brand.youtube}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-brass/60 text-brass transition-colors hover:bg-brass hover:text-iron"
+              >
+                <Youtube className="h-5 w-5" aria-hidden="true" />
+              </a>
+            </nav>
+            <Button asChild variant="ember">
+              <Link to="/contacte">{t.brand.contactCta}</Link>
+            </Button>
+          </div>
         </div>
       </footer>
     </div>
