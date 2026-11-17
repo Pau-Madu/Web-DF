@@ -189,8 +189,9 @@ html {
   }
 
   .reveal-ready .reveal {
-    opacity: 0;
-    transform: translateY(14px);
+    /* Not fully hidden: a faint preview hints that there is more content below. */
+    opacity: 0.3;
+    transform: translateY(10px);
     transition:
       opacity 0.6s ease-out,
       transform 0.6s ease-out;
