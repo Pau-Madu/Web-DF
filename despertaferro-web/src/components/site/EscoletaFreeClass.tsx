@@ -1,10 +1,13 @@
-import { CalendarDays, Gift, MapPin } from "lucide-react";
+import { CalendarDays, Gift, MapPin, Play } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/language";
 
-// Vídeo vertical de Liam (9:16). Copiar el archivo a public/ con este nombre.
-const VIDEO_SRC = "/escoleta-liam-primera-classe.mp4";
+// Vídeo vertical de Liam (9:16) alojado en el Drive de la secció, para no cargar la web.
+// En Drive debe estar compartido como "Cualquier persona con el enlace · Lector".
+const DRIVE_VIDEO_ID = "19euRMYWDd719hzX8sXeyXY89NScqC7RB";
+const VIDEO_EMBED_URL = `https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/preview`;
 const POSTER_SRC = "/Fotos-componentes/Liam-DF.webp";
 
 const copy = {
@@ -18,7 +21,7 @@ const copy = {
     cta: "Inscriu-te per a la classe gratuïta",
     videoLabel: "Vídeo: Liam presenta la primera classe gratuïta de l'Escoleta",
     videoNote: "Vídeo en castellà.",
-    fallback: "El teu navegador no pot reproduir aquest vídeo.",
+    play: "Reproduir el vídeo",
   },
   es: {
     kicker: "Ven a probar",
@@ -30,7 +33,7 @@ const copy = {
     cta: "Inscríbete para la clase gratuita",
     videoLabel: "Vídeo: Liam presenta la primera clase gratuita de la Escoleta",
     videoNote: "",
-    fallback: "Tu navegador no puede reproducir este vídeo.",
+    play: "Reproducir el vídeo",
   },
   en: {
     kicker: "Come and try",
@@ -42,13 +45,14 @@ const copy = {
     cta: "Sign up for your free class",
     videoLabel: "Video: Liam presents the Escoleta's free first class",
     videoNote: "Video in Spanish.",
-    fallback: "Your browser can't play this video.",
+    play: "Play the video",
   },
 };
 
 export function EscoletaFreeClass() {
   const { language } = useLanguage();
   const t = copy[language];
+  const [playing, setPlaying] = useState(false);
 
   return (
     <section
@@ -83,17 +87,36 @@ export function EscoletaFreeClass() {
       </div>
 
       <figure className="mx-auto w-full max-w-[15rem]">
-        <video
-          className="aspect-[9/16] w-full rounded-md border border-border bg-iron object-cover shadow-medieval"
-          controls
-          playsInline
-          preload="none"
-          poster={POSTER_SRC}
-          aria-label={t.videoLabel}
-        >
-          <source src={VIDEO_SRC} type="video/mp4" />
-          {t.fallback}
-        </video>
+        <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md border border-border bg-iron shadow-medieval">
+          {playing ? (
+            // The Drive player only loads after the click, so the page stays light.
+            <iframe
+              src={VIDEO_EMBED_URL}
+              title={t.videoLabel}
+              className="absolute inset-0 h-full w-full"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setPlaying(true)}
+              className="group absolute inset-0 h-full w-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brass"
+              aria-label={`${t.play}: ${t.videoLabel}`}
+            >
+              <img
+                src={POSTER_SRC}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover opacity-85 transition-opacity group-hover:opacity-100"
+              />
+              <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-medieval transition-transform group-hover:scale-110">
+                <Play className="ml-1 h-7 w-7 fill-current" aria-hidden="true" />
+              </span>
+            </button>
+          )}
+        </div>
         {t.videoNote ? (
           <figcaption className="mt-2 text-center text-sm text-muted-foreground">{t.videoNote}</figcaption>
         ) : null}
