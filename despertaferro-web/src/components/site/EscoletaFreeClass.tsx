@@ -1,5 +1,5 @@
 import { CalendarDays, Gift, MapPin, Play } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/language";
@@ -9,6 +9,10 @@ import { useLanguage } from "@/lib/language";
 const DRIVE_VIDEO_ID = "19euRMYWDd719hzX8sXeyXY89NScqC7RB";
 const VIDEO_EMBED_URL = `https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/preview`;
 const POSTER_SRC = "/Fotos-componentes/Liam-DF.webp";
+// Drive's player has a minimum width: in a narrow box it shifts the video to the right.
+// So it is drawn at this size (where it centres well) and scaled down to fit the box.
+const PLAYER_WIDTH = 360;
+const PLAYER_HEIGHT = 640;
 
 const copy = {
   va: {
@@ -53,6 +57,18 @@ export function EscoletaFreeClass() {
   const { language } = useLanguage();
   const t = copy[language];
   const [playing, setPlaying] = useState(false);
+  const frameRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const box = frameRef.current;
+    if (!box) return;
+    const update = () => setScale(box.clientWidth / PLAYER_WIDTH);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(box);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -87,13 +103,17 @@ export function EscoletaFreeClass() {
       </div>
 
       <figure className="mx-auto w-full max-w-[15rem]">
-        <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md border border-border bg-iron shadow-medieval">
+        <div
+          ref={frameRef}
+          className="relative aspect-[9/16] w-full overflow-hidden rounded-md border border-border bg-iron shadow-medieval"
+        >
           {playing ? (
             // The Drive player only loads after the click, so the page stays light.
             <iframe
               src={VIDEO_EMBED_URL}
               title={t.videoLabel}
-              className="absolute inset-0 h-full w-full"
+              className="absolute left-0 top-0 origin-top-left border-0"
+              style={{ width: PLAYER_WIDTH, height: PLAYER_HEIGHT, transform: `scale(${scale})` }}
               allow="autoplay; fullscreen"
               allowFullScreen
             />
